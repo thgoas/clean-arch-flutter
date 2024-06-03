@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:fin_ca/layers/domain/entities/group.dart';
+import 'package:fin_ca/layers/domain/entities/group_entity.dart';
 import 'package:fin_ca/layers/domain/erros/failure_get_group.dart';
 import 'package:fin_ca/layers/domain/repositories/get_one_group_repository.dart';
 import 'package:fin_ca/layers/domain/usecases/get_one_group_use_case_imp.dart';
@@ -11,7 +11,7 @@ class GetOneRepositoryMock extends Mock implements GetOneGroupRepository {}
 void main() {
   late GetOneRepositoryMock repository;
   late GetOneGroupUseCaseImp usecase;
-  final testGroup = Group(id: '1', description: 'desc', type: 'type');
+  final testGroup = GroupEntity(id: '1', description: 'desc', type: 'type');
   setUpAll(() {
     // Registre o comportamento esperado para argumentos não nulos
     registerFallbackValue('');
