@@ -1,1 +1,3 @@
-abstract class FailureGetGroup implements Exception {}
+abstract class FailureGroup implements Exception {}
+
+class InvalidIdError implements FailureGroup {}

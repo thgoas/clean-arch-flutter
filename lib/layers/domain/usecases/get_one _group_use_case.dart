@@ -3,5 +3,5 @@ import 'package:dartz/dartz.dart';
 import 'package:fin_ca/layers/domain/erros/failure_get_group.dart';
 
 abstract class GetOneGroupUseCase {
-  Future<Either<FailureGetGroup, Group>> call(String id);
+  Future<Either<FailureGroup, Group>> call(String id);
 }

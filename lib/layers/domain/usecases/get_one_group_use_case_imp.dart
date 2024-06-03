@@ -9,7 +9,10 @@ class GetOneGroupUseCaseImp implements GetOneGroupUseCase {
 
   GetOneGroupUseCaseImp(this._repository);
   @override
-  Future<Either<FailureGetGroup, Group>> call(String id) async {
+  Future<Either<FailureGroup, Group>> call(String id) async {
+    if (id.isEmpty) {
+      return Left(InvalidIdError());
+    }
     return _repository.getOneGroup(id);
   }
 }
