@@ -21,7 +21,7 @@ void main() {
     usecase = GetOneGroupUseCaseImp(repository);
   });
   test('should return a group when the id is valid', () async {
-    when(() => repository.getOneGroup('1')).thenAnswer(
+    when(() => repository('1')).thenAnswer(
       (_) async => Right(testGroup),
     );
     final result = await usecase("1");
@@ -31,7 +31,7 @@ void main() {
   });
 
   test('should return a failureGroup when there is a failure', () async {
-    when(() => repository.getOneGroup(any())).thenAnswer(
+    when(() => repository(any())).thenAnswer(
       (_) async => Left(InvalidIdError()),
     );
     final result = await usecase("1");

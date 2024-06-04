@@ -13,6 +13,6 @@ class GetOneGroupUseCaseImp implements GetOneGroupUseCase {
     if (id.isEmpty) {
       return Left(InvalidIdError());
     }
-    return _repository.getOneGroup(id);
+    return _repository(id);
   }
 }
