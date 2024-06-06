@@ -6,12 +6,17 @@ import 'package:get_it/get_it.dart';
 
 void main() {
   Inject.init();
-  test('should return a group id with 1', () async {
+  test('should return GroupPageSuccessfulState', () async {
     final controller = GetIt.instance.get<GroupController>();
 
     await controller.getOneGroup('1');
-    print(controller.state.value);
     expect(controller.state.value, isA<GroupPageSuccessfulState>());
-    // expect(controller.state, '1');
+  });
+
+  test('should return a group id with 1', () async {
+    final controller = GetIt.instance.get<GroupController>();
+
+    await controller.getOneGroup('4');
+    expect(controller.state.value, isA<GroupPageErrorState>());
   });
 }
