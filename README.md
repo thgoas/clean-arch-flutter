@@ -1,4 +1,4 @@
-# fin_ca
+# Clean Arch Flutter
 
 A new Flutter project.
 
